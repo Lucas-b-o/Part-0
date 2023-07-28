@@ -10,7 +10,12 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
-    server-->>browser: recharge page Notes
+    server-->>browser: recharge HTML document
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: main css file
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
@@ -20,11 +25,11 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: [{ "content": "HTML é fácil", "date": "2023-1-1" }, ... ]
+    server-->>browser: [{"content": "vsvs", "date": "2023-07-27T21:51:48.856Z"}, ... ]
     deactivate server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    browser->>server: GET chrome-extension://abeameknhmpmfegfbeioekonmhbmbpai/css/content.css
     activate server
-    server-->>browser: shearch css file
+    server-->>browser: content css file
     deactivate server
 ```
